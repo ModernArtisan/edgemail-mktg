@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head> 
+<title> <%= data.title %> </title>
+</head>
+<body>
+    <%- include ('partials/nav') -%>
+<h1> <%= data.title %> </h1>
+<div class="remark">
+<p>..Meh</p> 
+</div>
+<section class="content">
+  <h1 class="content__heading"> Send Me a Message</h1>
+  <p class="content__lede"> Use this handy contact form to get in touch with me.</p>
+
+  <form class="content__form contact-form edgemail-mktg">
+     <div class="contact-form__input-group">
+      <input id="salutation-mr" class="contact-form__input contact-form__input--radio" name="salutation" type="radio" value="Mr.">
+      <label class="contact-form__label contact-form__label--radio" for="salutation-mr">Mr.</label>
+      <input id="salutation-mrs" class="contact-form__input contact-form__input--radio" name="salutation" type="radio" value="Mrs.">
+      <label class="contact-form__label contact-form__label--radio" for="salutation-mrs">Mrs.</label>
+      <input id="salutation-ms" class="contact-form__input contact-form__input--radio" name="salutation" type="radio" value="Ms.">
+      <label class="contact-form__label contact-form__label--radio" for="salutation-ms">Ms.</label> 
+     </div>
+     <div class="contact-form__input-group">
+      <label class="contact-form__label" for="name">Full Name</label> 
+      <input id="name" class="contact-form__input contact-form__input--text" name="name" type="text"> 
+     </div>
+     <div class="contact-form__input-group">
+      <label class="contact-form__label" for="email">Email Address</label> 
+      <input id="email" class="contact-form__input contact-form__input--email" name="email" type="email"> 
+     </div>
+     <div class="contact-form__input-group"> 
+      <label class="contact-form__label" for="subject">How can I help you?</label> 
+      <select id="subject" class="contact-form__input contact-form__input--select" name="subject" multiple>
+          <option> I have a problem </option>
+          <option> I have a general question </option>
+      </select> 
+     </div>
+     <div class="contact-form__input-group"> 
+      <label class="contact-form__label" for="message">Enter a Message</label> 
+      <textarea id="message" class="contact-form__input contact-form__input--textarea" name="message" rows="6" cols="65"></textarea> 
+     </div>
+     <div class="contact-form__input-group"> 
+      <p class="contact-form__label--checkbox-group">Please send me:</p> 
+      <input id="snacks-pizza" class="contact-form__input contact-form__input--checkbox" name="snacks" type="checkbox" value="pizza"> 
+      <label class="contact-form__label contact-form__label--checkbox" for="snacks-pizza">Pizza</label> 
+      <input id="snacks-cake" class="contact-form__input contact-form__input--checkbox" name="snacks" type="checkbox" value="cake"> 
+      <label class="contact-form__label contact-form__label--checkbox" for="snacks-cake">Cake</label>  
+      <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7">
+      </div>
+    <button class="contact-form__button" type="submit">Send it!</button>
+
+</form>
+
+ <div class="results">
+  <h2 class="results__heading">Form Data</h2> 
+  <p><%= qs.salutation %></p><p><%= qs.name %></p> 
+  <p><%= qs.subject %></p><p><%= qs.email %></p>
+  <p><%= qs.message %></p> 
+  <p><%= qs.snacks %></p><p><%= qs.secret %></p>
+  <pre class="results__display-wrapper"></pre>   
+    <code class="results__display"></code> 
+    
+ </div>
+</section>
+
+</body>
+</html> 

@@ -1,0 +1,1 @@
+This is no longer an undefined cast from log.  Originates from THIS.txt
